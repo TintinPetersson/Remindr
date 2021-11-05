@@ -1,0 +1,912 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: rgb(16, 22, 30);
+  background: linear-gradient(
+    184deg,
+    rgba(16, 22, 30, 1) 0%,
+    rgba(28, 54, 82, 1) 50%,
+    rgba(16, 22, 30, 1) 100%
+  );
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.yellow {
+  color: #ecc22b;
+  /* color: #00eeff; */
+}
+
+.title {
+  font-weight: bold;
+}
+
+.main-title {
+  font-family: "Bebas Neue", cursive;
+  font-weight: normal;
+  font-size: 9vmin;
+  text-align: center;
+}
+
+.card-finished {
+  background: rgb(87, 191, 83) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(87, 191, 83, 1) 0%,
+    rgba(59, 69, 111, 1) 100%
+  ) !important;
+}
+
+.card-tasks {
+  background: rgb(33, 39, 46);
+  background: linear-gradient(
+    184deg,
+    rgba(33, 39, 46, 1) 0%,
+    rgba(12, 35, 80, 1) 100%
+  );
+  border: 0.2px solid rgba(217, 217, 217, 0.09);
+  border-radius: 10px;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.card-tasks:hover {
+  transform: scale(1.05);
+}
+
+.bold-para {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.plus-icon {
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-add-banking-and-finance-kiranshastry-gradient-kiranshastry.png");
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+.plus-icon:hover {
+  transform: scale(1.3);
+}
+
+.clock-icon {
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-clock-man-accessories-kiranshastry-gradient-kiranshastry.png");
+  width: 30px;
+  height: 30px;
+  transition: 0.2s;
+}
+
+.clock-icon:hover {
+  transform: scale(1.3);
+}
+
+.personal {
+  color: #fe0bc8;
+}
+
+.business {
+  color: #0b6cfe;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.trash-icon {
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-trash-interface-kiranshastry-gradient-kiranshastry.png");
+  width: 25px;
+  height: 25px;
+  align-self: flex-end;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  float: right;
+}
+
+.trash-icon:hover {
+  transform: scale(1.4);
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-trash-hygiene-kiranshastry-gradient-kiranshastry-1.png");
+}
+
+.edit-icon {
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-edit-interface-kiranshastry-gradient-kiranshastry.png");
+  width: 25px;
+  height: 25px;
+  margin-right: 3%;
+  margin-bottom: 1%;
+  float: right;
+}
+
+.edit-icon:hover {
+  transform: scale(1.2);
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-edit-interface-kiranshastry-gradient-kiranshastry-2.png");
+}
+
+.check-icon {
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-check-banking-and-finance-kiranshastry-gradient-kiranshastry.png");
+  width: 25px;
+  height: 25px;
+  transition: 0.2s;
+  margin-right: 2%;
+  margin-top: 1%;
+  align-self: flex-end;
+  float: right;
+}
+
+.check-icon:hover {
+  transform: scale(1.2);
+  content: url("https://img.icons8.com/color-glass/48/000000/circled.png");
+}
+
+.circle-icon {
+  content: url("https://img.icons8.com/color-glass/48/000000/circled.png");
+  width: 25px;
+  height: 25px;
+  transition: 0.2s;
+  margin-right: 2%;
+  margin-top: 1%;
+  align-self: flex-end;
+  float: right;
+}
+
+.circle-icon:hover {
+  transform: scale(1.2);
+  content: url("https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-check-banking-and-finance-kiranshastry-gradient-kiranshastry.png");
+}
+
+.text-line {
+  text-decoration-line: line-through;
+}
+
+.nav-link {
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  font-size: 20px;
+}
+
+/* **** SEARCHBAR WATCHLIST ****  */
+
+.searchBox-container {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: rgb(26, 38, 56);
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+/* **** END OF SEARCHBAR ****  */
+
+.btn-secondary {
+  border-radius: 5px;
+}
+
+.btn-close {
+  float: right;
+  margin-right: 2%;
+  margin-top: 2%;
+  display: block;
+  background-color: gray;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn-close:hover {
+  transform: scale(1.2);
+}
+
+.taskButton {
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.1);
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.taskButton:hover {
+  transform: scale(1.1);
+}
+
+.textbox {
+  height: 200px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  transition: 0.2s;
+}
+
+.textbox:focus {
+  transform: scale(1.1);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.todo-item {
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.todo-input-time {
+  width: 100x;
+  margin: 10px auto;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  border: none;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.todo-input-time2 {
+  width: 100x;
+  margin: 10px auto;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  border: none;
+}
+
+:root {
+  --shadow-color: gray;
+  --shadow-color-light: #ecc22b;
+}
+
+.logo-1 {
+  font-family: "Bebas Neue", cursive;
+  color: #ecc22b;
+  font-weight: bolder;
+  font-size: 50px;
+  animation: neon 3s infinite;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.add-watchlist-btn {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.09);
+  color: whitesmoke;
+  border: none;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+}
+
+.remove-watchlist-btn {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.09);
+  color: whitesmoke;
+  border: none;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+}
+
+.add-watchlist-btn:hover {
+  transform: scale(1.15);
+}
+
+.add-todo-btn {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.09);
+  color: whitesmoke;
+  border: none;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+}
+.add-todo-btn:hover {
+  transform: scale(1.15);
+}
+
+.save-todo-btn {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.09);
+  color: whitesmoke;
+  border: none;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+  font-weight: bold;
+  width: 100px;
+  height: 40px;
+}
+.save-todo-btn:hover {
+  transform: scale(1.15);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.modal-content {
+  background: rgb(33, 39, 46);
+  background: linear-gradient(
+    184deg,
+    rgba(33, 39, 46, 1) 0%,
+    rgba(12, 35, 80, 1) 100%
+  );
+  border-radius: 10px;
+  position: absolute;
+  width: 80vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 8px 4px rgba(0, 0, 0, 0.15);
+  animation-name: modalopen;
+  animation-duration: 0s;
+}
+
+.modalPlotCol {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+
+#modalPlot {
+  font-size: 2.25vmin;
+  width: 90%;
+}
+
+.img-rating {
+  max-width: 60%;
+  height: auto;
+}
+
+#modalImage {
+  border: 3px solid rgb(22, 26, 29);
+  -webkit-box-shadow: 0px 7px 5px rgb(16, 22, 30);
+  box-shadow: 0px 7px 5px rgb(16, 22, 30);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.backgroundColor {
+  background: rgba(18, 24, 29, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#modalMovieTitle {
+  font-size: 3vmin;
+  font-weight: bold;
+}
+
+.movietitle {
+  font-family: "Bebas Neue", cursive;
+  font-weight: normal;
+  font-size: 5vmin;
+  padding-top: 50%;
+  text-align: center;
+  color: white;
+}
+
+.modalMovieInfo {
+  font-size: 2.25vmin;
+}
+
+.modalRatings {
+  font-size: 2vmin;
+  font-weight: bold;
+}
+
+.todo-input-text {
+  width: 100x;
+  margin: 10px auto;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  border: none;
+}
+
+.button-close {
+  width: 30px;
+  font-size: 25px;
+  margin-right: 2%;
+  color: #c0c5cb;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  float: right;
+}
+
+.button-close:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+.button-close-div {
+  overflow: hidden;
+}
+
+.wordCarousel {
+  font-size: 4vmin;
+  text-align: center;
+  font-weight: 100;
+  color: #eee;
+}
+
+/* *** TITLE Word Carousel *** */
+.wordCarousel div {
+  overflow: hidden;
+  height: 80px;
+  padding-top: 10px;
+  margin-top: -10px;
+}
+
+.wordCarousel div li {
+  font-weight: 700;
+  padding: 0 120px;
+  height: 45px;
+  margin-bottom: 45px;
+}
+
+.flip2 {
+  -webkit-animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip3 {
+  -webkit-animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+.flip4 {
+  -webkit-animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+@-webkit-keyframes flip2 {
+  0% {
+    margin-top: -180px;
+  }
+
+  5% {
+    margin-top: -90px;
+  }
+
+  50% {
+    margin-top: -90px;
+  }
+
+  55% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@keyframes flip2 {
+  0% {
+    margin-top: -180px;
+  }
+
+  5% {
+    margin-top: -90px;
+  }
+
+  50% {
+    margin-top: -90px;
+  }
+
+  55% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@-webkit-keyframes flip3 {
+  0% {
+    margin-top: -270px;
+  }
+
+  5% {
+    margin-top: -180px;
+  }
+
+  33% {
+    margin-top: -180px;
+  }
+
+  38% {
+    margin-top: -90px;
+  }
+
+  66% {
+    margin-top: -90px;
+  }
+
+  71% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@keyframes flip3 {
+  0% {
+    margin-top: -270px;
+  }
+
+  5% {
+    margin-top: -180px;
+  }
+
+  33% {
+    margin-top: -180px;
+  }
+
+  38% {
+    margin-top: -90px;
+  }
+
+  66% {
+    margin-top: -90px;
+  }
+
+  71% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@-webkit-keyframes flip4 {
+  0% {
+    margin-top: -360px;
+  }
+
+  5% {
+    margin-top: -270px;
+  }
+
+  25% {
+    margin-top: -270px;
+  }
+
+  30% {
+    margin-top: -180px;
+  }
+
+  50% {
+    margin-top: -180px;
+  }
+
+  55% {
+    margin-top: -90px;
+  }
+
+  75% {
+    margin-top: -90px;
+  }
+
+  80% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@keyframes flip4 {
+  0% {
+    margin-top: -360px;
+  }
+
+  5% {
+    margin-top: -270px;
+  }
+
+  25% {
+    margin-top: -270px;
+  }
+
+  30% {
+    margin-top: -180px;
+  }
+
+  50% {
+    margin-top: -180px;
+  }
+
+  55% {
+    margin-top: -90px;
+  }
+
+  75% {
+    margin-top: -90px;
+  }
+
+  80% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+.img-carousel {
+  height: 180px;
+  width: 400px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.img-watchlist {
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.cardMovie {
+  background: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+.cardMovie:hover {
+  transform: scale(1.1);
+}
+
+.card-img-text {
+  opacity: 1 !important;
+  color: #999999;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-img-top {
+  width: 70%;
+}
+
+.imgDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.showcaseText {
+  padding-left: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.showcaseText2 {
+  padding-left: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.img-watchlist {
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.watchlistCard {
+  background: transparent;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+.watchlistCard:hover {
+  transform: scale(1.1);
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
+}

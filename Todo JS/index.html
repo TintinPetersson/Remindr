@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>• REMINDR • WATCHLIST •</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="icon"
+      href="https://icons-for-free.com/iconfiles/png/512/checklist+documents+marks+todo+icon-1320184207350021670.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="#" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-transparent">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                id="nav-Todos"
+                class="nav-link active"
+                aria-current="page"
+                href="javascript:void(0)"
+                >Todos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-Watchlist" href="javascript:void(0)"
+                >Watchlist</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Modal -->
+    <div id="mainModal" class="modal text-light">
+      <!-- Modal for Tasks -->
+      <div class="modal-content" id="modalTasks">
+        <div class="button-close-div">
+          <button class="button-close" id="closeModalTaskBtn">✖</button>
+        </div>
+        <div class="modal-body text-center">
+          <form action="javascript:void(0)">
+            <input
+              class="todo-input textbox text-center"
+              type="text"
+              placeholder="Work, train etc..."
+            />
+            <section>
+              <input
+                style="display: none"
+                class="todo-input-time"
+                type="text"
+                placeholder="Duration"
+              />
+              <div>
+                <a class="clock-icon mt-3 mb-3" href="javascript:void(0)"></a>
+              </div>
+            </section>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button class="add-todo-btn">Add</button>
+          <button class="save-todo-btn hide">Save</button>
+        </div>
+      </div>
+      <!-- Modal for Watchlist -->
+      <div class="modal-content hide" id="modalWatchlist">
+        <div class="button-close-div">
+          <button class="button-close" id="closeModalWatchlistBtn">✖</button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="row">
+            <div class="col">
+              <img class="img-fluid" id="modalImage" src="" />
+              <p class="pt-2" id="modalMovieTitle"></p>
+              <p class="modalMovieInfo title text-muted" id="modalGenre"></p>
+              <p class="modalMovieInfo title text-muted" id="modalDetails"></p>
+            </div>
+            <div class="col modalPlotCol pr-3 mr-3">
+              <p class="backgroundColor" id="modalPlot"></p>
+              <div class="row">
+                <div class="col">
+                  <img
+                    class="img-rating"
+                    src="https://img.icons8.com/color/50/000000/imdb.png"
+                  />
+                  <p class="modalRatings" id="modalImdb"></p>
+                </div>
+                <div class="col">
+                  <img
+                    class="img-rating"
+                    src="https://img.icons8.com/fluency/48/000000/tomato.png"
+                  />
+                  <p class="modalRatings" id="modalRottenTomatoes"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+          <div class="modal-footer justify-content-center">
+            <button class="add-watchlist-btn">Add to list</button>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button class="remove-watchlist-btn hide">Remove from list</button>
+          </div>
+        </div>
+        <!--Body-->
+      </div>
+      <!--Modal Content-->
+    </div>
+    <!-- Container for Tasks -->
+    <div
+      class="container-fluid justify-content-center text-center"
+      id="container-tasks"
+    >
+      <!-- Button trigger modal -->
+      <a class="plus-icon" id="openModalTaskBtn" href="javascript:void(0)"></a>
+      <!-- TITLE -->
+      <h1 class="main-title yellow">Remindr</h1>
+      <div class="wordCarousel">
+        <span>What are you here to</span>
+        <div>
+          <ul class="flip4">
+            <li>accomplish</li>
+            <li>achieve</li>
+            <li>fulfil</li>
+            <li>manage</li>
+          </ul>
+        </div>
+      </div>
+      <!-- TASKS - Cards -->
+      <p class="bold-para pt-4 text-center p-0">TODAY'S TASKS</p>
+      <div class="container todo-container">
+        <ul class="todo-list">
+          <div class="todo">
+            <div class="row pt-2 justify-content-center" id="cardRow"></div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <!-- End of container for Tasks -->
+    <!-- Container for Movie -->
+    <div
+      class="container-fluid justify-content-center hide"
+      id="container-watchlist"
+    >
+      <!-- TITLE -->
+      <h1 class="main-title yellow">WATCHLIST</h1>
+      <!-- Word Carousel -->
+      <div class="wordCarousel">
+        <span>Maybe watch</span>
+        <div>
+          <ul class="flip4">
+            <li>The Prestige?</li>
+            <li>It?</li>
+            <li>Interstellar?</li>
+            <li>Jaws?</li>
+          </ul>
+        </div>
+      </div>
+      <!-- SEARCHBAR -->
+      <div class="searchBox-container">
+        <div class="search-box">
+          <button class="btn-search"><i class="fa fa-search"></i></button>
+          <input
+            required
+            type="text"
+            class="input-search"
+            placeholder="Movie title..."
+          />
+        </div>
+      </div>
+      <!-- Showcase carousel-->
+      <div class="container">
+        <h2 class="showcaseText text-light">Popular right now</h2>
+        <div class="row mx-auto my-auto justify-content-center">
+          <div
+            id="recipeCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item showcaseItem active">
+                <div class="col-md-3">
+                  <div class="card cardMovie">
+                    <div class="card-img">
+                      <a
+                        id="It-Chapter-Two"
+                        href="javascript:void(0)"
+                        class="img-fluid img-carousel"
+                        style="
+                          content: url(https://www.vantagefilm.com/variant/motive-790x280/2019/09/it01vorschau960x340x.jpg);
+                        "
+                      ></a>
+                    </div>
+                    <div class="card-img-text pt-2">It Chapter Two</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item showcaseItem">
+                <div class="col-md-3">
+                  <div class="card cardMovie">
+                    <div class="card-img">
+                      <a
+                        id="Jaws"
+                        href="javascript:void(0)"
+                        class="img-fluid img-carousel"
+                        style="
+                          content: url(data:image/jpeg;base64,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);
+                        "
+                      ></a>
+                    </div>
+                    <div class="card-img-text pt-2">Jaws</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item showcaseItem">
+                <div class="col-md-3">
+                  <div class="card cardMovie">
+                    <div class="card-img">
+                      <a
+                        id="The-Prestige"
+                        href="javascript:void(0)"
+                        class="img-fluid img-carousel"
+                        style="
+                          content: url(https://cdn3.whatculture.com/images/2020/01/f36e7b8296aacc1e-600x338.jpg);
+                        "
+                      ></a>
+                    </div>
+                    <div class="card-img-text pt-2">The Prestige</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item showcaseItem">
+                <div class="col-md-3">
+                  <div class="card cardMovie">
+                    <div class="card-img">
+                      <a
+                        id="Interstellar"
+                        href="javascript:void(0)"
+                        class="img-fluid img-carousel"
+                        style="
+                          content: url(https://assets.fontsinuse.com/static/use-media-items/27/26619/full-1500x690/567022b0/interstellar_ver7_xlg.jpeg);
+                        "
+                      ></a>
+                    </div>
+                    <div class="card-img-text pt-2">Interstellar</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item showcaseItem">
+                <div class="col-md-3">
+                  <div class="card cardMovie">
+                    <div class="card-img">
+                      <a
+                        id="Pulp-Fiction"
+                        href="javascript:void(0)"
+                        style="
+                          content: url(https://vulturehound.co.uk/wp-content/uploads/2016/09/pulpfictionuma_resized.jpg);
+                        "
+                        class="img-fluid img-carousel"
+                      ></a>
+                    </div>
+                    <div class="card-img-text pt-2">Pulp Fiction</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item showcaseItem">
+                <div class="col-md-3">
+                  <div class="card cardMovie">
+                    <div class="card-img">
+                      <a
+                        id="Blade-Runner-2049"
+                        href="javascript:void(0)"
+                        class="img-fluid img-carousel"
+                        style="
+                          content: url(https://stevenlylejordan.files.wordpress.com/2017/10/tumblr_static_26osk19e9qck84sgcwogsw88w.jpg);
+                        "
+                      ></a>
+                    </div>
+                    <div class="card-img-text pt-2">Blade Runner 2049</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev bg-transparent w-aut"
+              href="#recipeCarousel"
+              role="button"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
+            <a
+              class="carousel-control-next bg-transparent w-aut"
+              href="#recipeCarousel"
+              role="button"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--End of Showcase carousel-->
+      <!-- Watchlist-->
+      <div class="container">
+        <h2 class="showcaseText2 text-light">Watchlist</h2>
+        <div id="watchlistRow" class="row pt-3"></div>
+      </div>
+      <!--End of Watchlist-->
+    </div>
+    <!-- End of container for Movies -->
+    <!-- SCRIPTS -->
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
